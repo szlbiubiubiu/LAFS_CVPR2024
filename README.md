@@ -3,4 +3,4 @@ Our paper 'LAFS: Landmark-based Facial Self-supervised Learning for Face Recogni
 
 We are finalizing the camera-ready version and release code. Thank you for your patience.
 
-[arxiv version](https://arxiv.org/pdf/2403.08161.pdf)
+[arxiv version](https://arxiv.org/abs/2403.08161)
