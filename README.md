@@ -41,9 +41,9 @@ torch==1.8.1+cu111;  torchvision==0.9.1+cu111
 ```
 
 2. SSL Pretraining Command
-'''
+```
 python -m torch.distributed.launch --nproc_per_node=2 dino_landmark_web.py
-'''
+```
 Note on 2A100 (40GB), the total pretraining training time would be around 2-3 days. 
 
 ### License
