@@ -22,7 +22,18 @@ In this work we focus on learning facial representations that can be adapted to 
 ```
 Please consider ***cite our paper and star the repo*** if you find this repo useful.
 
+Our code is partly borrowed from DINO (https://github.com/facebookresearch/dino) and Insightface(https://github.com/deepinsight/insightface).
+
+## To Do
+- [x] [baseline fViT](vit_pytorch_my/vit_face_nolandmark)
+- [x] [Part fViT](vit_pytorch_my/vit_face_withlandmark)
+- [x] Checkpoints: [Part fViT](https://drive.google.com/file/d/1ev-y0aOmt1mhQCCZwh3ef204ibszi1Rl/view?usp=sharing) (Performance on IJB-C: TAR@FAR=1e-4 97.29)
+- [ ] Training scripts
+
+
 ### Usage
+
+
 Please stay tuned for more updates regarding the camera-ready version and code.
 
 ### License
