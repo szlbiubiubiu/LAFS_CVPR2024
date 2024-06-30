@@ -41,10 +41,14 @@ Please stay tuned for more updates.
 ```
 torch==1.8.1+cu111;  torchvision==0.9.1+cu111
 ```
+2. Dataset
 
-2. SSL Pretraining Command
+- [x]MS1MV3    -- Please download from InsightFace(https://github.com/deepinsight/insightface/tree/master/recognition/_datasets_)
+- []WebFace4m
+
+3. SSL Pretraining Command
 ```
-python -m torch.distributed.launch --nproc_per_node=2 dino_landmark_web.py
+python -m torch.distributed.launch --nproc_per_node=2 lafs_train.py
 ```
 Note on 2A100 (40GB), the total pretraining training time would be around 2-3 days. 
 
