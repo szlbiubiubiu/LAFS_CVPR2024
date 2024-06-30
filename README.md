@@ -43,8 +43,8 @@ torch==1.8.1+cu111;  torchvision==0.9.1+cu111
 ```
 2. Dataset
 
-- [x]MS1MV3    -- Please download from InsightFace(https://github.com/deepinsight/insightface/tree/master/recognition/_datasets_)
-- []WebFace4m
+- [x] MS1MV3    -- Please download from InsightFace(https://github.com/deepinsight/insightface/tree/master/recognition/_datasets_)
+- [ ] WebFace4m
 
 3. SSL Pretraining Command
 ```
