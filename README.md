@@ -49,6 +49,7 @@ torch==1.8.1+cu111;  torchvision==0.9.1+cu111
 
 3. SSL Pretraining Command
 Before you start self-supervised pretraining, please use the landmark weight trained on MS1MV3 or WebFace4M, and specify in --landmark_path:
+
  [Part-fViT MS1MV3](https://drive.google.com/file/d/1ev-y0aOmt1mhQCCZwh3ef204ibszi1Rl/view?usp=sharing) (Performance on IJB-C: TAR@FAR=1e-4 97.29).
 - [ ] Part-fViT WebFace4M 
 
@@ -60,11 +61,11 @@ Note on 2A100 (40GB), the total pretraining training time would be around 2-3 da
 4. Supervised finetuning Command
 The training setting difference between the MS1MV3 and WebFace4M is that MS1MV3 use a stronger mixup probability of 0.2 and rand augmentation with magnitude of 2, while WebFace4M use 0.1 for mixup and rand augmentation magnitude. 
 
-And please note the colour channel of these datasets, i.e. MS1MV3 use brg order.
+&emsp;And please note the colour channel of these datasets, i.e. MS1MV3 use brg order.
 
-Before you run the following command, please change the dataset path --dataset_path, SSL pretrained model --model_dir, and model from stage 1 --pretrain_path.
+&emsp;Before you run the following command, please change the dataset path --dataset_path, SSL pretrained model --model_dir, and model from stage 1 --pretrain_path.
 
-If you want to run the model with flip augmentation only, please disable the mixup and augmentations, by setting random_resizecrop, rand_au to False in the FaceDataset function, and set mixup-prob to 0.0
+&emsp;If you want to run the model with flip augmentation only, please disable the mixup and augmentations, by setting random_resizecrop, rand_au to False in the FaceDataset function, and set mixup-prob to 0.0
 
 
 ```
@@ -72,7 +73,7 @@ python -m torch.distributed.launch --nproc_per_node=2 --nnodes=1 --node_rank=0  
 ```
 
 
-Please let me know if there is any problem in using this code as the cleaned code hasn't been tested. I will keep updating the usage of the code, thank you!
+&emsp;Please let me know if there is any problem in using this code as the cleaned code hasn't been tested. I will keep updating the usage of the code, thank you!
 
 
 ### License
