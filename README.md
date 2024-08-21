@@ -50,7 +50,7 @@ torch==1.8.1+cu111;  torchvision==0.9.1+cu111
 3. SSL Pretraining Command
 Before you start self-supervised pretraining, please use the landmark weight trained on MS1MV3 or WebFace4M, and specify in --landmark_path:
 
- [Part-fViT MS1MV3](https://drive.google.com/file/d/1ev-y0aOmt1mhQCCZwh3ef204ibszi1Rl/view?usp=sharing) (Performance on IJB-C: TAR@FAR=1e-4 97.29).
+- [ ] [Part-fViT MS1MV3](https://drive.google.com/file/d/1ev-y0aOmt1mhQCCZwh3ef204ibszi1Rl/view?usp=sharing) (Performance on IJB-C: TAR@FAR=1e-4 97.29).
 - [ ] Part-fViT WebFace4M 
 
 ```
