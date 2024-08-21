@@ -33,7 +33,8 @@ Please consider ***cite our paper and star the repo*** if you find this repo use
 - [x] LAFS Pretraining scripts
 - [ ] DINO-face Pretraining scripts
 - [ ] Checkpoints
-- [ ] Finetuning scripts
+- [x] Finetuning scripts
+- [ ] IJB datasets evaluation code
 
 Please stay tuned for more updates.
 ### Usage
@@ -43,14 +44,36 @@ torch==1.8.1+cu111;  torchvision==0.9.1+cu111
 ```
 2. Dataset
 
-- [x] MS1MV3    -- Please download from InsightFace(https://github.com/deepinsight/insightface/tree/master/recognition/_datasets_)
+- [x] MS1MV3    -- Please download from InsightFace(https://github.com/deepinsight/insightface/tree/master/recognition/_datasets_). Note that MS1MV3 use bgr order, and WebFace4M use rgb order.
 - [ ] WebFace4m
 
 3. SSL Pretraining Command
+Before you start self-supervised pretraining, please use the landmark weight trained on MS1MV3 or WebFace4M, and specify in --landmark_path:
+ [Part-fViT MS1MV3](https://drive.google.com/file/d/1ev-y0aOmt1mhQCCZwh3ef204ibszi1Rl/view?usp=sharing) (Performance on IJB-C: TAR@FAR=1e-4 97.29).
+- [ ] Part-fViT WebFace4M 
+
 ```
 python -m torch.distributed.launch --nproc_per_node=2 lafs_train.py
 ```
 Note on 2A100 (40GB), the total pretraining training time would be around 2-3 days. 
+
+4. Supervised finetuning Command
+The training setting difference between the MS1MV3 and WebFace4M is that MS1MV3 use a stronger mixup probability of 0.2 and rand augmentation with magnitude of 2, while WebFace4M use 0.1 for mixup and rand augmentation magnitude. 
+
+And please note the colour channel of these datasets, i.e. MS1MV3 use brg order.
+
+Before you run the following command, please change the dataset path --dataset_path, SSL pretrained model --model_dir, and model from stage 1 --pretrain_path.
+
+If you want to run the model with flip augmentation only, please disable the mixup and augmentations, by setting random_resizecrop, rand_au to False in the FaceDataset function, and set mixup-prob to 0.0
+
+
+```
+python -m torch.distributed.launch --nproc_per_node=2 --nnodes=1 --node_rank=0  --master_port 47771 train_largescale.py
+```
+
+
+Please let me know if there is any problem in using this code as the cleaned code hasn't been tested. I will keep updating the usage of the code, thank you!
+
 
 ### License
 This project is licensed under the terms of the MIT license.
