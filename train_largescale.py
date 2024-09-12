@@ -563,7 +563,7 @@ if __name__ == '__main__':
     # pdb.set_trace()
     landmarkcnn=None
     if pre_land==True:
-        from vit_pytorch_my.vit_face import face_landmark_4simmin_glo_loc
+
         from einops import rearrange, repeat
         landmarkcnn=face_landmark_4simmin_glo_loc(loss_type = 'CosFace',
                             GPU_ID = None,
