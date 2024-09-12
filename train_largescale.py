@@ -654,7 +654,7 @@ if __name__ == '__main__':
     #     best_model_dict[keys.replace('backbone.','')]=best_model_dict.pop(keys)
     #     # best_model_dict[keys.replace('module.','')]=best_model_dict.pop(keys)
     # pdb.set_trace()
-    BACKBONE.load_state_dict(best_model_dict,strict=True)# fix this
+    BACKBONE.load_state_dict(best_model_dict,strict=False)# fix this
     #load landmark part
     if with_land:
         # load_part_checkpoint_landmark_fromdino(path=mobi_pretrain,model=BACKBONE,pretrain_name=['stn','random'],freeze=False)    
