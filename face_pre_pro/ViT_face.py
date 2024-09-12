@@ -784,7 +784,7 @@ class ViT_face_landmark_patch8(nn.Module):
                 return x, emb
             else:
                 x = self.loss(emb, label)
-                return x, emb
+                return x, self.theta
         # elif 
 
         else:
