@@ -519,7 +519,7 @@ if __name__ == '__main__':
 
     train_sampler = torch.utils.data.distributed.DistributedSampler(
         dataset, shuffle=True)
-    trainloader = torch.utils.data.DataLoader(dataset, batch_size=BATCH_SIZE,  num_workers=8, pin_memory=True,drop_last=True,sampler=train_sampler)#shuffle=True,
+    trainloader = torch.utils.data.DataLoader(dataset, batch_size=BATCH_SIZE,  num_workers=12, pin_memory=True,drop_last=True,sampler=train_sampler)#shuffle=True,
 
     print("Number of Training Classes: {}".format(NUM_CLASS))
     args.mixup_fn = None
