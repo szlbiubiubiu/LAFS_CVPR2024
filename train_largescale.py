@@ -433,8 +433,8 @@ if __name__ == '__main__':
 
 
     # disable them if you want to train without landmark supervision
-    pre_land=True
-    keep_land=True
+    pre_land=False
+    keep_land=False
 
     ###############
 
