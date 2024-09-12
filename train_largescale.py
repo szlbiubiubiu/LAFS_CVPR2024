@@ -597,7 +597,7 @@ if __name__ == '__main__':
     # print(BACKBONE)
     print("{} Backbone Generated".format(BACKBONE_NAME))
     print("=" * 60)
-    pdb.set_trace()
+    # pdb.set_trace()
     if args.mixup_fn is not None:
         LOSS=SoftTargetCrossEntropy()#.cuda(args.gpu)
     else:
