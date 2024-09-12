@@ -10,13 +10,13 @@ def get_config(args):
         INPUT_SIZE=[112, 112],  # support: [112, 112] and [224, 224]
         EMBEDDING_SIZE=512,  # feature dimension#512
     )
-    if args.data_mode == 'retina':
+    # if args.data_mode == 'retina':
         
         
-        configuration['DATA_ROOT'] = './ms1m-retinaface-t1/'
+    configuration['DATA_ROOT'] = args.eval_root
         
-    else:
-        raise Exception(args.data_mode)
+    # else:
+    #     raise Exception(args.data_mode)
     if args.workers_id == 'cpu' or not torch.cuda.is_available():
         configuration['GPU_ID'] = []
         print("check", args.workers_id, torch.cuda.is_available())
@@ -37,7 +37,7 @@ def get_config(args):
     configuration['acc_step']=3
     
     # configuration['EVAL_PATH'] = '/import/nobackup_mmv_ioannisp/zs003/face_rec/glint360k/glint360k/glint360k'
-    configuration['EVAL_PATH'] = './ms1m-retinaface-t1/'
+    configuration['EVAL_PATH'] = configuration['DATA_ROOT']#'./ms1m-retinaface-t1/'
     
     #/hy-tmp/ms1m-retinaface-t1
     # configuration['EVAL_PATH'] ='/home/zhonglin/mount_folder/dataset/face_rec/retina_face/ms1m-retinaface-t1'# './eval/'

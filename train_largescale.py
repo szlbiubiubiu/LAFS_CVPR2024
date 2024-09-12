@@ -333,6 +333,7 @@ if __name__ == '__main__':
     parser.add_argument( "--pretrain_path", help="pretrain_path is the supervised model from stage 1", default='webface_196land_sp/Backbone_VIT_land_8_Epoch_34_Batch_327225_Time_2022-05-05-10-34_checkpoint.pth', type=str)
     parser.add_argument( "--model_dir", help="model_dir is the self-supervised model from stage 2(LAFS)", default='webface_ssl/checkpoint0040.pth', type=str)
     parser.add_argument( "--dataset_path", help="dataset_path is the path to the rec file (MS1M, WebFace4m)", default='webface_ssl/checkpoint0040.pth', type=str)
+    parser.add_argument( "--eval_root", help="eval_root is the path to the evaluation files, using validation files from MS1MV3 ", default='webface_ssl/checkpoint0040.pth', type=str)
 
     
     
@@ -501,15 +502,16 @@ if __name__ == '__main__':
 
 
 
-    dataset = FaceDataset(os.path.join(args.dataset_path, 'train.rec'), rand_mirror=True,random_resizecrop=True,rand_au=True,config_str='rand-m2-mstd0.5-inc1') #MS1MV3
-    # dataset = FaceDataset(os.path.join(args.dataset_path, 'train.rec'), rand_mirror=True,random_resizecrop=True,rand_au=True,config_str='rand-m1-mstd0.5-inc1') # WebFace
+    # dataset = FaceDataset(os.path.join(args.dataset_path, 'train.rec'), rand_mirror=True,random_resizecrop=True,rand_au=True,config_str='rand-m2-mstd0.5-inc1') #MS1MV3
+    dataset = FaceDataset(os.path.join(args.dataset_path, 'train.rec'), rand_mirror=True,random_resizecrop=True,rand_au=True,config_str='rand-m1-mstd0.5-inc1') # WebFace
 
     # dataset = FaceDataset(os.path.join(arg.dataset_path, 'train.rec'), rand_mirror=True,random_resizecrop=True,rand_au=False)
     #ms1m
     
     with open(os.path.join(DATA_ROOT, 'property'), 'r') as f:
         NUM_CLASS, h, w = [int(i) for i in f.read().split(',')] #VGG 8631
-    NUM_CLASS=205990# webaface identities
+    NUM_CLASS=205990# webaface identities:205990; 
+    # NUM_CLASS=93431# ms1m identities
     patch_size=8
     num_patches=196
     h, w=112,112
@@ -576,7 +578,7 @@ if __name__ == '__main__':
                             dropout=0.1,
                             emb_dropout=0.1)
         landmarkcnn=landmarkcnn.cuda()
-        load_part_checkpoint_landmark(path=pretrain_path,model=landmarkcnn,pretrain_name=['stn','output'])   
+        load_part_checkpoint_landmark(path=args.pretrain_path,model=landmarkcnn,pretrain_name=['stn','output'])   
         landmarkcnn.eval()
         # if knowledge_dis:
         transf_cit = torch.nn.MSELoss()
