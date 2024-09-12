@@ -633,28 +633,28 @@ class ViT_face_landmark_patch8(nn.Module):
             range_coor=torch.arange(0,14)*8+4#[0,14]-->[4,12,20,108]
             x,y=torch.meshgrid(range_coor,range_coor)
             self.standard_coord=torch.stack((x,y),2).view(1,-1,2)
-        #
-        # if self.loss_type == 'None':
-        #     print("no loss for vit_face")
-        # else:
-        #     if self.loss_type == 'Softmax':
-        #         self.loss = Softmax(in_features=dim, out_features=num_class, device_id=self.GPU_ID)
-        #     elif self.loss_type == 'CosFace':
+        
+        if self.loss_type == 'None':
+            print("no loss for vit_face")
+        else:
+            if self.loss_type == 'Softmax':
+                self.loss = Softmax(in_features=dim, out_features=num_class, device_id=self.GPU_ID)
+            elif self.loss_type == 'CosFace':
                 
-        #         # # # pdb.set_trace()
-        #         # from vit_pytorch_my.partial_fc import PartialFCAdamW
+                # # # pdb.set_trace()
+                # from vit_pytorch_my.partial_fc import PartialFCAdamW
                 
-        #         # self.loss = PartialFCAdamW(
-        #         #     CosFace_arcimplement(), dim, num_class, 
-        #         #     1.0, self.fp16)
-        #         # # module_partial_fc.train().cuda()
+                # self.loss = PartialFCAdamW(
+                #     CosFace_arcimplement(), dim, num_class, 
+                #     1.0, self.fp16)
+                # # module_partial_fc.train().cuda()
                 
 
-        #         self.loss = CosFace(in_features=dim, out_features=num_class, device_id=self.GPU_ID,m=0.4)
-        #     elif self.loss_type == 'ArcFace':
-        #         self.loss = ArcFace(in_features=dim, out_features=num_class, device_id=self.GPU_ID)
-        #     elif self.loss_type == 'SFace':
-        #         self.loss = SFaceLoss(in_features=dim, out_features=num_class, device_id=self.GPU_ID)
+                self.loss = CosFace(in_features=dim, out_features=num_class, device_id=self.GPU_ID,m=0.4)
+            elif self.loss_type == 'ArcFace':
+                self.loss = ArcFace(in_features=dim, out_features=num_class, device_id=self.GPU_ID)
+            elif self.loss_type == 'SFace':
+                self.loss = SFaceLoss(in_features=dim, out_features=num_class, device_id=self.GPU_ID)
 
     def forward(self, x, label= None , mask = None,visualize=False,save_token=False,opt=None,keep_num=None,glo_diff=False):
         p = self.patch_size
