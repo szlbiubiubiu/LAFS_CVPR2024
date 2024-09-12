@@ -20,7 +20,7 @@ logger = logging.getLogger()
 from timm.data import create_transform
 from timm.data.auto_augment import rand_augment_transform
 from util import rand_aa_face
-from ada_data_loader import Augmenter
+# from ada_data_loader import Augmenter
 # from RandAugment import RandAugment
 from IPython import embed
 import pdb
