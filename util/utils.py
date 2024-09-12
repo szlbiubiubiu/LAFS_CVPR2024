@@ -313,7 +313,7 @@ def perform_val(multi_gpu, device, embedding_size, batch_size, backbone, data_se
                 
 
                 batch = carray[idx:idx + batch_size]
-                # batch=batch/255.0-0.5
+                batch=batch/255.0-0.5
                 # landmark_a=[landmark_a_sin]*len(batch)
 
                 # theta=stn.batch_forward(batch,landmark_a)

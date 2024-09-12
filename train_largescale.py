@@ -787,7 +787,7 @@ if __name__ == '__main__':
             #     print('batch='+str(batch)+',max='+str(len(dataset)//BATCH_SIZE//world_size))
             # pdb.set_trace()
             # compute output
-            inputs = inputs.cuda()#to(DEVICE)
+            inputs = inputs.cuda()/255.0*2-1 #to(DEVICE)
             labels = labels.cuda().long()#to(DEVICE).long()
             labels_ori=labels.clone()
             # pdb.set_trace()
