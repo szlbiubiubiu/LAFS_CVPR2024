@@ -22,7 +22,7 @@ python -m torch.distributed.launch --nproc_per_node=2 --nnodes=1 --node_rank=0  
 --pretrain_path /data/home/acw569/precheck/webface_196land_sp/Backbone_VIT_land_8_Epoch_34_Batch_327225_Time_2022-05-05-10-34_checkpoint.pth \
 --model_dir /data/scratch/acw569/checkpoint/ssl_check/SSL_Webface_webland_partViTB.pth \
 --dataset_path /data/scratch/acw569/webface_4m/webface_rec --eval_root /data/scratch/acw569/webface_4m/ms1m-retinaface-t1 \
---outdir /data/scratch/acw569/checkpoint/sp_check/webface_webland_34epoch_mixup0201_aug01
+--outdir /data/scratch/acw569/checkpoint/sp_check/webface_webland_34epoch_mixup0501_aug01
 # python -m torch.distributed.launch --nproc_per_node=3 --nnodes=1 --node_rank=0  --master_port 47771 train_withatt.py
 # OMP_NUM_THREADS=1 python train_withatt.py
 # OMP_NUM_THREADS=1 torchrun 
