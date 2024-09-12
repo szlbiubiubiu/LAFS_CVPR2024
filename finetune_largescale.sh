@@ -1,7 +1,7 @@
 #!/bin/bash
 #$ -cwd
 #$ -j y
-#$ -l h_rt=71:0:0     # XX hours runtime
+#$ -l h_rt=1:0:0     # XX hours runtime
 #$ -l h_vmem=11G      # 11G RAM per core
 #$ -pe smp 16          # 8 cores per GPU
 #$ -l gpu=2           # request 1 GPU
