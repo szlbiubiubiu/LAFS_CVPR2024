@@ -380,7 +380,7 @@ if __name__ == '__main__':
                     default="ViT-B_16", 
                     help="Which variant to use.")
     #mixup args
-    parser.add_argument('--mixup', type=float, default=0.2,#0.8
+    parser.add_argument('--mixup', type=float, default=0.5,#0.8
                     help='mixup alpha, mixup enabled if > 0. (default: 0.8)')
     parser.add_argument('--cutmix', type=float, default=0,
                         help='cutmix alpha, cutmix enabled if > 0. (default: 1.0)')
