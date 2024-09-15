@@ -75,12 +75,16 @@ python -m torch.distributed.launch --nproc_per_node=2 --nnodes=1 --node_rank=0  
 
 &emsp;Please let me know if there is any problem in using this code as the cleaned code hasn't been tested. I will keep updating the usage of the code, thank you!
 
-
+### Evaluation
+```
+python IJB_evaluation.py
+```
+Please specify the model_path and image_path in the file. 
 ### Supervised Checkpoints
-|Training set   | pretrained|Model  |
-|---            | ---       | ---   |
-|WebFace4M      | No        | [Part fViT](https://drive.google.com/file/d/16fsYE-j4v6dh7V-_aM0nnU9VdjjlZ1VX/view?usp=drive_link)      |
-|WebFace4M      | LAFS      | [Part fViT](https://drive.google.com/file/d/1BUYm2Bcgp8ZRlBcwOZxiJtWiQAvK2Ujy/view?usp=drive_link)|      
+|Training set   | pretrained|Model  | Performance|
+|---            | ---       | ---   | ---        |
+|WebFace4M      | No        | [Part fViT](https://drive.google.com/file/d/16fsYE-j4v6dh7V-_aM0nnU9VdjjlZ1VX/view?usp=drive_link)      | IJB-C: 97.40/ IJB-B: 96.05|
+|WebFace4M      | LAFS      | [Part fViT](https://drive.google.com/file/d/1BUYm2Bcgp8ZRlBcwOZxiJtWiQAvK2Ujy/view?usp=drive_link)|   IJB-C: 97.58/ IJB-B: 96.28|
 
 ### Self-supervised Checkpoints
 |Pretraining Set   | SSL Method|Model  |
