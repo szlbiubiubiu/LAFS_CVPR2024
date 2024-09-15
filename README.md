@@ -76,5 +76,18 @@ python -m torch.distributed.launch --nproc_per_node=2 --nnodes=1 --node_rank=0  
 &emsp;Please let me know if there is any problem in using this code as the cleaned code hasn't been tested. I will keep updating the usage of the code, thank you!
 
 
+### Supervised Checkpoints
+|Training set   | pretrained|Model  |
+|---            | ---       | ---   |
+|WebFace4M      | No        | [Part fViT](https://drive.google.com/file/d/16fsYE-j4v6dh7V-_aM0nnU9VdjjlZ1VX/view?usp=drive_link)      |
+|WebFace4M      | LAFS      | [Part fViT](https://drive.google.com/file/d/1BUYm2Bcgp8ZRlBcwOZxiJtWiQAvK2Ujy/view?usp=drive_link)|      
+
+### Self-supervised Checkpoints
+|Pretraining Set   | SSL Method|Model  |
+|---             | ---       | ---   |
+|1-shot WebFace4M      | DINO        | [fViT](https://drive.google.com/file/d/19hbQYNnMvJ5enKlxOQnb5QSCefL6MTuA/view?usp=drive_link)      |
+|1-shot WebFace4M      | LAFS      | [Part fViT](https://drive.google.com/file/d/1WykUT8MRBbc8Oc-WjQ_aya2ubfLPMgae/view?usp=drive_link)|   
+|---             | ---      | ---   |
+|MS1MV3          | LAFS      | ---   | 
 ### License
 This project is licensed under the terms of the MIT license.
