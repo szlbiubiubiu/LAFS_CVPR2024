@@ -51,7 +51,7 @@ torch==1.8.1+cu111;  torchvision==0.9.1+cu111
 Before you start self-supervised pretraining, please use the landmark weight trained on MS1MV3 or WebFace4M, and specify in --landmark_path:
 
 - [ ] [Part-fViT MS1MV3](https://drive.google.com/file/d/1ev-y0aOmt1mhQCCZwh3ef204ibszi1Rl/view?usp=sharing) (Performance on IJB-C: TAR@FAR=1e-4 97.29).
-- [ ] Part-fViT WebFace4M 
+- [ ] [Part-fViT WebFace4M](https://drive.google.com/file/d/16fsYE-j4v6dh7V-_aM0nnU9VdjjlZ1VX/view?usp=drive_link)
 
 ```
 python -m torch.distributed.launch --nproc_per_node=2 lafs_train.py
@@ -79,7 +79,7 @@ python -m torch.distributed.launch --nproc_per_node=2 --nnodes=1 --node_rank=0  
 ```
 python IJB_evaluation.py
 ```
-Please specify the model_path and image_path in the file. 
+Please specify the model_path and image_path in the file. You can download the data from [Insightface](https://drive.google.com/file/d/1aC4zf2Bn0xCVH_ZtEuQipR2JvRb1bf8o/view?usp=sharing)
 ### Supervised Checkpoints
 |Training set   | pretrained|Model  | IJB-B| IJB-C|
 |---            | ---       | ---   | ---        |---|
