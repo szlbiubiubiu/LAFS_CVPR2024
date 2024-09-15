@@ -32,9 +32,9 @@ Please consider ***cite our paper and star the repo*** if you find this repo use
 
 - [x] LAFS Pretraining scripts
 - [ ] DINO-face Pretraining scripts
-- [ ] Checkpoints
+- [x] Checkpoints
 - [x] Finetuning scripts
-- [ ] IJB datasets evaluation code
+- [x] IJB datasets evaluation code
 
 Please stay tuned for more updates.
 ### Usage
