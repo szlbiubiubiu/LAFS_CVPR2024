@@ -49,7 +49,7 @@ torch==1.8.1+cu111;  torchvision==0.9.1+cu111
 
 3. **SSL Pretraining Command:**
 
-Before you start self-supervised pretraining, please use the landmark weight trained on MS1MV3 or WebFace4M, and specify in --landmark_path:
+Before you start self-supervised pretraining, please use the landmark weight trained on MS1MV3 or WebFace4M, and specify in **--landmark_path**:
 
 - [x] [Part-fViT MS1MV3](https://drive.google.com/file/d/1ev-y0aOmt1mhQCCZwh3ef204ibszi1Rl/view?usp=sharing) (Performance on IJB-C: TAR@FAR=1e-4 97.29).
 - [x] [Part-fViT WebFace4M](https://drive.google.com/file/d/16fsYE-j4v6dh7V-_aM0nnU9VdjjlZ1VX/view?usp=drive_link) (Performance on IJB-C: TAR@FAR=1e-4 97.40)
@@ -65,7 +65,7 @@ The training setting difference between the MS1MV3 and WebFace4M is that MS1MV3 
 
 &emsp;And please note the colour channel of these datasets, i.e. MS1MV3 use brg order.
 
-&emsp;Before you run the following command, please change the dataset path --dataset_path, SSL pretrained model --model_dir, and model from stage 1 --pretrain_path.
+&emsp;Before you run the following command, please change the dataset path **--dataset_path**, SSL pretrained model **--model_dir**, and model from stage 1 **--pretrain_path**.
 
 &emsp;If you want to run the model with flip augmentation only, please disable the mixup and augmentations, by setting random_resizecrop, rand_au to False in the FaceDataset function, and set mixup-prob to 0.0
 
