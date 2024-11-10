@@ -45,13 +45,14 @@ torch==1.8.1+cu111;  torchvision==0.9.1+cu111
 2. Dataset
 
 - [x] MS1MV3    -- Please download from InsightFace(https://github.com/deepinsight/insightface/tree/master/recognition/_datasets_). Note that MS1MV3 use bgr order, and WebFace4M use rgb order.
-- [ ] WebFace4m
+- [ ] WebFace4m  --I can't release the .rec file of this dataset as there is license issue. Please obtain from the offical website(https://www.face-benchmark.org/download.html) and convert into .ref file
 
 3. SSL Pretraining Command
+
 Before you start self-supervised pretraining, please use the landmark weight trained on MS1MV3 or WebFace4M, and specify in --landmark_path:
 
-- [ ] [Part-fViT MS1MV3](https://drive.google.com/file/d/1ev-y0aOmt1mhQCCZwh3ef204ibszi1Rl/view?usp=sharing) (Performance on IJB-C: TAR@FAR=1e-4 97.29).
-- [ ] [Part-fViT WebFace4M](https://drive.google.com/file/d/16fsYE-j4v6dh7V-_aM0nnU9VdjjlZ1VX/view?usp=drive_link)
+- [x] [Part-fViT MS1MV3](https://drive.google.com/file/d/1ev-y0aOmt1mhQCCZwh3ef204ibszi1Rl/view?usp=sharing) (Performance on IJB-C: TAR@FAR=1e-4 97.29).
+- [x] [Part-fViT WebFace4M](https://drive.google.com/file/d/16fsYE-j4v6dh7V-_aM0nnU9VdjjlZ1VX/view?usp=drive_link) (Performance on IJB-C: TAR@FAR=1e-4 97.40)
 
 ```
 python -m torch.distributed.launch --nproc_per_node=2 lafs_train.py
@@ -59,6 +60,7 @@ python -m torch.distributed.launch --nproc_per_node=2 lafs_train.py
 Note on 2A100 (40GB), the total pretraining training time would be around 2-3 days. 
 
 4. Supervised finetuning Command
+
 The training setting difference between the MS1MV3 and WebFace4M is that MS1MV3 use a stronger mixup probability of 0.2 and rand augmentation with magnitude of 2, while WebFace4M use 0.1 for mixup and rand augmentation magnitude. 
 
 &emsp;And please note the colour channel of these datasets, i.e. MS1MV3 use brg order.
