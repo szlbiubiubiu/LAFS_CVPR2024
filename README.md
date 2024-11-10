@@ -45,7 +45,7 @@ torch==1.8.1+cu111;  torchvision==0.9.1+cu111
 2. **Dataset**
 
 - [x] MS1MV3    -- Please download from InsightFace(https://github.com/deepinsight/insightface/tree/master/recognition/_datasets_). Note that MS1MV3 use bgr order, and WebFace4M use rgb order.
-- [ ] WebFace4m  --I can't release the .rec file of this dataset as there is license issue. Please obtain from the offical website(https://www.face-benchmark.org/download.html) and convert into .ref file
+- [ ] WebFace4m  --I can't release the .rec file of this dataset as there is license issue. Please obtain from the offical website(https://www.face-benchmark.org/download.html) and convert into .ref file using ima2rec.py.
 
 3. **SSL Pretraining Command:**
 
