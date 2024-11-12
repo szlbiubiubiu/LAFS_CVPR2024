@@ -1,6 +1,6 @@
 ## **LAFS: Landmark-based Facial Self-supervised Learning for Face Recognition**
 
-![LAFS](image/LAFS_img.jpg)
+!<p align="center"> [LAFS](image/LAFS_img.jpg)
 <!---
 <p align="center">
     <img src="image/LAFS_aug_small_v3.pdf" alt="pdf" width="600"/>
