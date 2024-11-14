@@ -54,6 +54,7 @@ torch==1.8.1+cu111;  torchvision==0.9.1+cu111
 |[link](https://1drv.ms/u/c/7bd58491c54e4351/EWEv9Aw72klBpYfYLNJMII8BGvGuoIXeVV5OutzKbOn3dA?e=ofxekc) |[link](https://1drv.ms/u/c/7bd58491c54e4351/EeVKM5eAu2hJvXle4cxjLkABHwZEGjTAK4S3Lt7KfsFi8w?e=tKrcBE) |[link](https://1drv.ms/u/c/7bd58491c54e4351/ESDN7Xq-cdBAmTNcQokuoekB093IxDhjZ3WCMMkr6Gq3ZA?e=cHWVA3) | [link](https://1drv.ms/u/c/7bd58491c54e4351/ET0ml8yWbWlAptv5LgjNXfoBlX4ru7A4fpE6z7vH2eA-JA?e=4W52Is) |please use the original WebFace4M|
 
 Please specify the ratio for experiment in FaceDataset function. For example, 1% with 1-shot, you should set **partition** in **FaceDataset** to 0.01.
+
 3. **SSL Pretraining Command:**
 
 Before you start self-supervised pretraining, please use the landmark weight trained on MS1MV3 or WebFace4M, and specify in **--landmark_path**:
