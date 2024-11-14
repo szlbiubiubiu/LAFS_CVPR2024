@@ -49,6 +49,7 @@ torch==1.8.1+cu111;  torchvision==0.9.1+cu111
 
 - [x] Few-shot WebFace4m:  To ensure that the experiments are reproducible, the few-shot WebFace4M datasets filtered by me are released as follows:
 |1-shot| 2-shot| 4-shot | 10-shot|full|
+|-|-|-|-|-|
 |[link](https://1drv.ms/u/c/7bd58491c54e4351/EWEv9Aw72klBpYfYLNJMII8BGvGuoIXeVV5OutzKbOn3dA?e=ofxekc) |[link](https://1drv.ms/u/c/7bd58491c54e4351/EeVKM5eAu2hJvXle4cxjLkABHwZEGjTAK4S3Lt7KfsFi8w?e=tKrcBE) |[link](https://1drv.ms/u/c/7bd58491c54e4351/ESDN7Xq-cdBAmTNcQokuoekB093IxDhjZ3WCMMkr6Gq3ZA?e=cHWVA3) | [link](https://1drv.ms/u/c/7bd58491c54e4351/ET0ml8yWbWlAptv5LgjNXfoBlX4ru7A4fpE6z7vH2eA-JA?e=4W52Is) |please use the original WebFace4M|
 
 Please specify the ratio for experiment in FaceDataset function. For example, 1% with 1-shot, you should set **partition** in **FaceDataset** to 0.01.
